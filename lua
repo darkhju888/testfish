@@ -4875,7 +4875,7 @@ if _id == 6296321810 or _id == 6479231833 or _id == 6301638949 or _id == 6480994
     Desc = "Skip to next part.",
 	Mode = 2,
 	Callback = function()
-		Notify("Haha", "ejks", 5)
+		_Game["SkipInstant"]()
 end})
     VisualSection:CreateToggle({
 	Title = "Monster",
@@ -4929,7 +4929,7 @@ elseif _id == 6472459099 or _id == 6688734180 or _id == 6682163754 or _id == 668
     Desc = "Skip to next part.",
 	Mode = 2,
 	Callback = function()
-		Notify("Haha", "ejks", 5)
+		_Game["SkipInstant"]()
 end})
     VisualSection:CreateToggle({
 	Title = "Monster",
@@ -4962,7 +4962,7 @@ elseif _id == 7265396387 or _id == 7251865082 then --4.1
     Desc = "Skip to next part.",
 	Mode = 2,
 	Callback = function()
-		Notify("Haha", "ejks", 5)
+		_Game["SkipInstant"]()
 end})
     VisualSection:CreateToggle({
 	Title = "Monster",
@@ -4989,7 +4989,7 @@ elseif _id == 7265396805 or _id == 7251866503 then --4.2
     Desc = "Collect All Butterflies.",
 	Mode = 2,
 	Callback = function()
-		Notify("Haha", "ejks", 5)
+		_Game["AutoButterfly"](true)
 end})
     VisualSection:CreateToggle({
 	Title = "Monster",
@@ -5016,7 +5016,7 @@ elseif _id == 7265397072 or _id == 7251867155 then --4.3
     Desc = "Burn All Armors.",
 	Mode = 2,
 	Callback = function()
-		Notify("Haha", "ejks", 5)
+		_Game["AutoArmor"]()
 end})
     VisualSection:CreateToggle({
 	Title = "Monster",
@@ -5043,7 +5043,7 @@ elseif _id == 7265397848 or _id == 7251867574 then --4.4
     Desc = "Destroy All Hearts.",
 	Mode = 2,
 	Callback = function()
-		Notify("Haha", "ejks", 5)
+		_Game["AutoHeart"](true)
 end})
     VisualSection:CreateToggle({
 	Title = "Monster",
@@ -5058,7 +5058,11 @@ end})
 	Toggle = true,
 	Value = false,
 	Callback = function(value)
-		print(value)
+		if value then
+			_Game["AutoSaigomo"](true)
+		else
+			_Game["AutoSaigomo"](false)
+		end
 	end})
 elseif _id == 6243699076 or _id == 15989427413 or _id == 7068737459 then --Lobby
 	Control = Window:CreateTab({

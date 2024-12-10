@@ -4,7 +4,7 @@ t = task;
 tw = t.wait;
 v3 = Vector3.new;
 new = Instance.new;
-c = c;
+c = CFrame.new;
 _ws = gs_(game, "Workspace");
 _py = gs_(game, "Players");
 _cui = gs_(game, "CoreGui");
@@ -3801,7 +3801,7 @@ function Notify(Header, Desc, Time)
 end
 Window = Library:CreateWindow({
 	Title = "Syntax.dev",
-	Logo = 77569540363638
+	Logo = 107097024646412
 })
 _MainTab = {
     Tab_Information = Window:CreateTab({

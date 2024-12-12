@@ -467,7 +467,7 @@ _setFunctions = {
 				Tween = val
 				local c = C
 				if not Tween then
-					_c = c
+					_c = C
 				else
 					local startPos = _c
 					local startTime = tick()

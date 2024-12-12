@@ -17,9 +17,9 @@ _id = game.PlaceId;
 _localpy = _py.LocalPlayer;
 _bp = _localpy.Backpack;
 _pui = _localpy:WaitForChild("PlayerGui");
-_charpy = _localpy and _localpy.Character;
-_humanoid = _charpy and _charpy:WaitForChild("Humanoid");
-_root = _charpy and _charpy:WaitForChild("HumanoidRootPart");
+_charpy = _localpy.Character;
+_humanoid = _charpy:WaitForChild("Humanoid");
+_root = _charpy:WaitForChild("HumanoidRootPart");
 _c = _root.CFrame;
 ESP = {};
 if not _G.FullBrightExecuted then
@@ -467,7 +467,7 @@ _setFunctions = {
 				Tween = val
 				local c_ = C
 				if not Tween then
-					_c = C
+					_c = c_
 				else
 					local startPos = _c
 					local startTime = tick()

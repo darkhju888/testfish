@@ -465,7 +465,7 @@ _setFunctions = {
 		["Normal"] = function(C, val, S)
 			pcall(function()
 				Tween = val
-				local c = C
+				local c_ = C
 				if not Tween then
 					_c = C
 				else
@@ -476,7 +476,7 @@ _setFunctions = {
 					connection = _hb:Connect(function()
 						local elapsedTime = tick() - startTime
 						local alpha = math.min(elapsedTime / duration, 1)
-						local newCFrame = startPos:Lerp(c, alpha)
+						local newCFrame = startPos:Lerp(c_, alpha)
 						noclip(true)
 						_c = newCFrame
 						if alpha >= 1 then

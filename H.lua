@@ -3046,10 +3046,8 @@ if game:IsLoaded() then
 		pcall(function()
 			local Camera = require(game.ReplicatedStorage.Util.CameraShaker)
                         Camera:Stop()
-			repeat wait()
-				game:GetService("ReplicatedStorage").Effect.Container.Respawn:Destroy()
-				game:GetService("ReplicatedStorage").Effect.Container.Death:Destroy()
-			until not game:GetService("ReplicatedStorage").Effect.Container:FindFirstChild("Death") or not game:GetService("ReplicatedStorage").Effect.Container:FindFirstChild("Respawn")
+			hookfunction(require(game:GetService("ReplicatedStorage").Effect.Container.Death), function() return end)
+hookfunction(require(game:GetService("ReplicatedStorage").Effect.Container.Respawn), function() return end)
 		end)
 	end
 _G.Hitbox = 100

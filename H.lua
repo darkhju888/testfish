@@ -3348,13 +3348,22 @@ spawn(function()
     	end
 	end)
 end)
+
 spawn(function()
     while task.wait(1) do
         pcall(function()
-            if game:GetService("ReplicatedStorage"):FindFirstChild("Diablo") or game:GetService("ReplicatedStorage"):FindFirstChild("Deandre") or game:GetService("ReplicatedStorage"):FindFirstChild("Urban") or game:GetService("Workspace").Enemies:FindFirstChild("Diablo") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre") or game:GetService("Workspace").Enemies:FindFirstChild("Urban") then
-                Elite:Set("Elite : "..Spawn | "Killed :  "..game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter","Progress"))	
+            if game:GetService("ReplicatedStorage"):FindFirstChild("Diablo") or 
+               game:GetService("ReplicatedStorage"):FindFirstChild("Deandre") or 
+               game:GetService("ReplicatedStorage"):FindFirstChild("Urban") or 
+               game:GetService("Workspace").Enemies:FindFirstChild("Diablo") or 
+               game:GetService("Workspace").Enemies:FindFirstChild("Deandre") or 
+               game:GetService("Workspace").Enemies:FindFirstChild("Urban") then
+
+                Elite:Set("Elite : " .. Spawn .. " | Killed : " .. 
+                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter", "Progress"))
             else
-                Elite:Set("Elite : "..NotSpawn | "Killed :  "..game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter","Progress"))
+                Elite:Set("Elite : " .. NotSpawn .. " | Killed : " .. 
+                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter", "Progress"))
             end
         end)
     end

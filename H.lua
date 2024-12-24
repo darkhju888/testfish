@@ -3044,6 +3044,8 @@ function Library:Notify(info)
 end
 if game:IsLoaded() then
 		pcall(function()
+			local Camera = require(game.ReplicatedStorage.Util.CameraShaker)
+                        Camera:Stop()
 			repeat wait()
 				game:GetService("ReplicatedStorage").Effect.Container.Respawn:Destroy()
 				game:GetService("ReplicatedStorage").Effect.Container.Death:Destroy()
@@ -3052,8 +3054,6 @@ if game:IsLoaded() then
 	end
 _G.Hitbox = 100
 _G.CanAtackPlayers = false
-local Camera = require(game.ReplicatedStorage.Util.CameraShaker)
-Camera:Stop()
 local environment, replicatedstorage, players, net, client, modulepath, characterfolder, enemyfolder do
 	environment = (getgenv or getrenv or getfenv)()
 	replicatedstorage = game:GetService("ReplicatedStorage")

@@ -50,4 +50,3 @@ Section2:CreateDropdown({
     Callback = function(value)
         getgenv().SelectFastAttack = value
 end})
-spawn(function()

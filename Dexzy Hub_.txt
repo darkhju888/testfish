@@ -1,8 +1,4 @@
-By nnnnn_nnnnnnnnn.n
-ดิสแจกทุกอย่างที่มี Alsher​ Hub Server
-https://discord.gg/SbrTPHn8uT
-
-    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Dummyrme/Library/refs/heads/main/OldUI.lua"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Dummyrme/Library/refs/heads/main/OldUI.lua"))()
 
     posX = 0
 posY = 60

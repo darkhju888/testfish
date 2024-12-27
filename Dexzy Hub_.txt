@@ -999,43 +999,6 @@ function CheckLevel()
         end
     end)
 ------------------------------------------------------------------------------
-Section1:CreateButton({
-    Title = "Redeem All Code",
-    Callback = function()
-        _G.code = true
-        if _G.code then
-function UseCode(Text)
-    game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(Text)
-end})
-
-
-local codes = {
-    "15B_BESTBROTHERS",
-    "Sub2CaptainMaui",
-    "DEVSCOOKING",
-    "Sub2Fer999",
-    "Enyu_is_Pro",
-    "JCWK",
-    "Starcodeheo",
-    "Bluxxy",
-    "SUB2GAMERROBOT_EXP1",
-    "Sub2NoobMaster123",
-    "Sub2Daigrock",
-    "Axiore",
-    "TantaiGaming",
-    "StrawHatMaine",
-    "Sub2OfficialNoobie",
-    "Fudd10",
-    "Bignews",
-    "TheGreatAce"
-}
-
-for _, code in ipairs(codes) do
-    UseCode(code)
-end
-
-_G.code = false
-end
 
 ------------------------------------------------------------------------------
     task.spawn(function()

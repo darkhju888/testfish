@@ -1,9 +1,3 @@
-By nnnnn_nnnnnnnnn.n
-ดิสแจกทุกอย่างที่มี Alsher​ Hub Server
-https://discord.gg/SbrTPHn8uT
-
-print('fuxk')
-
 PosY = 30
 if not game:IsLoaded() then game.Loaded:Wait() end
 local fask = task 

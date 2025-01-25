@@ -2603,7 +2603,7 @@ elseif Fisch then
 		end
 	end})
 	General_set:CreateToggle({Title = "Disable Oxygen",Value = true,Callback = function(value)
-		LocalPlayer.Character.client.oxygen.Disabled = value
+		LocalPlayer.Character.oxygen.Disabled = value
 	end})
 	General_set:CreateToggle({Title = "Lock Body",Value = _G.FCHAR,Callback = function(value)
 		_G.FCHAR = value

@@ -2528,25 +2528,13 @@ elseif Fisch then
 	General_itemss = Items:CreateSection({Title = "Markets",Side = "Left"})
 	General_zone = General:CreateSection({Title = "Zone",Side = "Left"})
 	Teleport_place = Teleport:CreateSection({Title = "Teleport",Side = "Left"})
-	pingData = General_status:CreateLabel({Title = "Ping : " .. game:GetService("Stats").PerformanceStats.Ping:GetValue() .. "ms"})
 	timee = General_status:CreateLabel({Title = "Time : " .. PlayerGui.hud.safezone.worldstatuses["3_cycle"].label.Text,Side = "Left"})
 	weather = General_status:CreateLabel({Title = "Weather : " .. PlayerGui.hud.safezone.worldstatuses["2_weather"].label.Text,Side = "Left"})
 	season = General_status:CreateLabel({Title = "Season : " .. PlayerGui.hud.safezone.worldstatuses["4_season"].label.Text,Side = "Left"})
 	Goldpole = General_status:CreateLabel({Title = '<font color="rgb(255, 255, 0)">Spawn! : Golden Tide Pole</font>',Side = "Left"})
+	krakenz = General_status:CreateLabel({Title = '<font color="rgb(85, 85, 255)">Spawn! : The Kraken Pool</font>',Side = "Left"})
 	Megalodon = General_status:CreateLabel({Title = '<font color="rgb(255, 0 ,0)">Spawn! : Megalodon</font>',Side = "Left"})
 	GreatHammerS = General_status:CreateLabel({Title = '<font color="rgb(255, 0, 195)">Spawn! : Great Hammerhead Shark</font>',Side = "Left"})
-		spawn(function()
-			while task.wait(1) do
-				for _, v in pairs(game:GetService("CoreGui").RobloxGui.PerformanceStats:GetChildren()) do
-					if v.Name == "PS_Button" and v.Position == UDim2.new(0.833333313, 0, 0, 0) then
-						local ping = v:FindFirstChild("ValueLabel", true)
-						if ping and ping.Position == UDim2.new(0, 10, 0.550000012, 0) then
-							pingData:Set("Ping : " .. ping.Text .. "ms")
-						end
-					end
-				end
-			end
-		end)
 	spawn(function()
 		while task.wait(1) do
 			weather:Set("Weather : " .. PlayerGui.hud.safezone.worldstatuses["2_weather"].label.Text)
@@ -2573,6 +2561,12 @@ elseif Fisch then
 				Goldpole:SetVisible(true)
 			else
 				Goldpole:SetVisible(false)
+			end
+			kkub = workspace:FindFirstChild("The Kraken Pool", true)
+			if kkub then
+				krakenz:SetVisible(true)
+			else
+				krakenz:SetVisible(false)
 			end
 		end
 	end)
@@ -2608,7 +2602,7 @@ elseif Fisch then
 			end
 		end
 	end})
-	General_set:CreateToggle({Title = "Fully Bar Size",Value = true,Callback = function(value)
+	General_set:CreateToggle({Title = "Disable Oxygen",Value = true,Callback = function(value)
 		LocalPlayer.Character.client.oxygen.Disabled = value
 	end})
 	General_set:CreateToggle({Title = "Lock Body",Value = _G.FCHAR,Callback = function(value)
@@ -2680,8 +2674,8 @@ elseif Fisch then
 			end
 		end
 	end)
-	specialzone = "Golden Tide Pole"
-	specialzonelist = {"Golden Tide Pole", "Megalodon", "Great Hammerhead Shark"}
+	specialzone = "nil"
+	specialzonelist = {"[New!] The Kraken Pool", "Megalodon", "Great Hammerhead Shark", "Golden Tide Pole"}
 	General_zone:CreateDropdown({Title = "Special Zones [ When It Spawn ]",List = specialzonelist,Value = specialzone ,Multi = false,Callback = function(value)
 		specialzone = value
 	end})
@@ -2700,6 +2694,11 @@ elseif Fisch then
 			hammer = workspace:FindFirstChild("Great Hammerhead Shark", true)
 			if hammer then
 				tp(hammer.CFrame * CFrame.new(0, 70, 0))
+			end
+		elseif specialzone == "The Kraken Pool" then
+			kraken = workspace:FindFirstChild("The Kraken Pool", true)
+			if kraken then
+				tp(kraken.CFrame * CFrame.new(0, 70, 0))
 			end
 		else
 			Notify("Error", "Please Select Zone ;-;", 5)

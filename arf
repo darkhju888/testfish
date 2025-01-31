@@ -1,7 +1,3 @@
-if getgenv().Version ~= "1.0.0" then
-	print("Fuck ME Harder Baby ><")
-	print("By Horny Witch - Envy")
-end
 if getgenv().Version == "1.0.0" then
 	_id = game.PlaceId
 	loadstr = function(raw)
@@ -13,5 +9,10 @@ if getgenv().Version == "1.0.0" then
 		loadstr("https://raw.githubusercontent.com/G1GX/Fetching/refs/heads/main/Master/Fisch.ex")
 	elseif _id == 16981421605 then -- As Sword man
 		print("Fuck ME Harder Baby ><")
+	else
+		print("Fuck ME Harder Baby ><")
+		print("Horny Witch : Envy")
 	end
+else
+	print("Fuck ME Harder Baby ><")
 end

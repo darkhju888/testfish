@@ -1,5 +1,6 @@
 if getgenv().Version ~= "1.0.0" then
 	print("Fuck ME Harder Baby ><")
+	print("By Horny Witch - Envy")
 end
 if getgenv().Version == "1.0.0" then
 	_id = game.PlaceId
